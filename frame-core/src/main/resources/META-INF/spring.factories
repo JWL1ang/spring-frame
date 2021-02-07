@@ -1,0 +1,5 @@
+#spring boot starter 自动配置类指引
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+   top.vjin.frame.core.config.CoreAutoConfig
+org.springframework.boot.env.EnvironmentPostProcessor=\
+   top.vjin.frame.core.config.CoreEnvironmentPostProcessor
