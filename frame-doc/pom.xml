@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>frame-base</artifactId>
+        <groupId>top.vjin.frame</groupId>
+        <version>1.0.0</version>
+        <relativePath>../frame-base/pom.xml</relativePath>
+    </parent>
+
+    <name>frame-doc</name>
+    <artifactId>frame-doc</artifactId>
+    <version>${project.parent.version}</version>
+    <packaging>jar</packaging>
+    <description>文档模块</description>
+
+    <repositories>
+        <!-- 阿里maven仓库 -->
+        <repository>
+            <id>alimaven</id>
+            <url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!--核心模块-->
+        <dependency>
+            <groupId>top.vjin.frame</groupId>
+            <artifactId>frame-core</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <!--接口文档生成框架-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox-swagger2.version}</version>
+        </dependency>
+        <!--接口文档插件-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-bean-validators</artifactId>
+            <version>${springfox-swagger2.version}</version>
+        </dependency>
+        <!--接口文档界面-->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <version>${knife4j.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.swagger</groupId>
+                    <artifactId>swagger-annotations</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.swagger</groupId>
+                    <artifactId>swagger-models</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+    </dependencies>
+
+</project>
