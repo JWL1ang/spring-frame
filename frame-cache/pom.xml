@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>top.vjin.frame</groupId>
+        <artifactId>frame-base</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../frame-base/pom.xml</relativePath>
+    </parent>
+
+    <name>frame-cache</name>
+    <artifactId>frame-cache</artifactId>
+    <version>${project.parent.version}</version>
+    <packaging>jar</packaging>
+    <description>缓存模块</description>
+
+    <repositories>
+        <!-- 阿里maven仓库 -->
+        <repository>
+            <id>alimaven</id>
+            <url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!--核心模块-->
+        <dependency>
+            <groupId>top.vjin.frame</groupId>
+            <artifactId>frame-core</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <!--redission starter-->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
+            <version>3.12.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.javassist</groupId>
+                    <artifactId>javassist</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.objenesis</groupId>
+                    <artifactId>objenesis</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--使redisson使用高版本的javassist-->
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.25.0-GA</version>
+        </dependency>
+        <!--使redisson使用高版本的objenesis-->
+        <dependency>
+            <groupId>org.objenesis</groupId>
+            <artifactId>objenesis</artifactId>
+            <version>2.6</version>
+        </dependency>
+
+        <!-- spring session -->
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-core</artifactId>
+            <version>2.3.1.RELEASE</version>
+        </dependency>
+    </dependencies>
+
+</project>
