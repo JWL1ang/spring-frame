@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>frame-base</artifactId>
+        <groupId>top.vjin.frame</groupId>
+        <version>1.0.0</version>
+        <relativePath>../frame-base/pom.xml</relativePath>
+    </parent>
+
+    <name>frame-mq</name>
+    <artifactId>frame-mq</artifactId>
+    <version>${project.parent.version}</version>
+    <packaging>jar</packaging>
+    <description>消息队列模块</description>
+
+    <repositories>
+        <!-- 阿里maven仓库 -->
+        <repository>
+            <id>alimaven</id>
+            <url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!--核心模块-->
+        <dependency>
+            <groupId>top.vjin.frame</groupId>
+            <artifactId>frame-core</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <!--rabbitmq基本依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
